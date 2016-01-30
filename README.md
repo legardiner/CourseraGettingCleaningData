@@ -15,4 +15,5 @@ It should run in a folder of the Samsung data (the zip had this folder: UCI HAR 
 - features.txt
 - test/
 - train/
+
 The output is created in working directory with the name of grouped_data.txt
