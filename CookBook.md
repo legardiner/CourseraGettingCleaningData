@@ -62,4 +62,8 @@ The run_analysis.R script performs the following steps to clean the data:
 - Read features.txt and activity_labels.txt from the "./Samsung" folder and store them in features and activities variables resepctively.
 - Concatenate testData to trainData to generate a 10299x561 data frame, joinData; concatenate testLabel to trainLabel to generate a 10299x1 data frame, joinLabel; concatenate testSubject to trainSubject to generate a 10299x1 data frame, joinSubject.
 - Find the indicies where features are measures of mean or standard deviation and subset the joinData on those indices
-
+- Create activity label for each number key in joinLabel and clean up activity names by removing _
+- Combine the joinSubject, joinLabel and joinData by column to get a new cleaned 10299x68 data frame, cleanData. Properly name the first two columns, "subject" and "activity". The "subject" column contains integers that range from 1 to 30 inclusive; the "activity" column contains 6 kinds of activity names; the last 66 columns contain measurements that range from -1 to 1 exclusive.
+- Write the cleanData out to "clean_data.txt" file in current working directory.
+- Finally, generate a second independent tidy data set with the average of each measurement for each activity and each subject. This is done using the aggregate function to find the mean and group by activity and subject. This results in a 180x68 data frame called groupedData.
+- Write the groupedData out to "grouped_data.txt" file in current working directory.
